@@ -16,7 +16,7 @@ public class HashMap<K,V> {
     }
 
     boolean isFull(){
-        if(size == 99) return true;
+        if(size == Keys.length-1) return true;
         return false;
     }
 
