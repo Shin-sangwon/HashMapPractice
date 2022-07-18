@@ -15,11 +15,6 @@ public class HashMap<K,V> {
         size = 0;
     }
 
-    boolean isFull(){
-        if(size == Keys.length-1) return true;
-        return false;
-    }
-
     void put(K Key, V Value) {
 
         if(isContain(Key)){
@@ -60,12 +55,6 @@ public class HashMap<K,V> {
 
     }
 
-    boolean isContain(K Key){
-
-        for(int i = 0; i < size; i++) if(Keys[i].equals(Key)) return true;
-        return false;
-    }
-
     public void remove(K Key) {
         if(!isContain(Key)){
             System.out.println("삭제할 키가 없습니다.");
@@ -85,6 +74,14 @@ public class HashMap<K,V> {
 
     }
 
+    public List<K> keySet() {
+        List<K> keySet = new ArrayList<>();
+
+        for(int i = 0; i < size; i++) keySet.add((K) Keys[i]);
+
+        return keySet;
+    }
+
     public int size() {
         return size;
     }
@@ -97,13 +94,17 @@ public class HashMap<K,V> {
         return -1;
     }
 
-    public List<K> keySet() {
-        List<K> keySet = new ArrayList<>();
-
-        for(int i = 0; i < size; i++) keySet.add((K) Keys[i]);
-
-        return keySet;
+    boolean isFull(){
+        if(size == Keys.length-1) return true;
+        return false;
     }
+
+    boolean isContain(K Key){
+
+        for(int i = 0; i < size; i++) if(Keys[i].equals(Key)) return true;
+        return false;
+    }
+
 
 
 }

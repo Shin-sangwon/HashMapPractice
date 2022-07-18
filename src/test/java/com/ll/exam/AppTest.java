@@ -108,6 +108,14 @@ public class AppTest {}
             a사람_존.말하다();
         }
 
+        @Test
+        void 배열의_크기가_늘어나는가(){
+            HashMap<Integer, Integer> map = new HashMap<>();
+            for(int i = 0; i < 101; i++) map.put(i, i);
+
+            assertEquals(101, map.size);
+        }
+
     }
 
 
